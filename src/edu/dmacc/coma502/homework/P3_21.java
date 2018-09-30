@@ -30,27 +30,42 @@ public class P3_21 {
 		System.out.print("Enter your income: ");
 		final double income = scanner.nextDouble();
 
-		double tier6Income = Math.max(income - BRACKET_FIVE_CAP, 0.0);
+		double tier6Income = 0;//Math.max(income - BRACKET_FIVE_CAP, 0.0);
+		if(income - BRACKET_FIVE_CAP > 0) {
+			tier6Income = income - BRACKET_FIVE_CAP;
+		}
 		double tier6Taxes = tier6Income * BRACKET_SIX_RATE;
 		
 		double remainingIncome = income - tier6Income;
 		
-		double tier5Income = Math.max(remainingIncome - BRACKET_FOUR_CAP, 0.0);
+		double tier5Income = 0;//Math.max(remainingIncome - BRACKET_FOUR_CAP, 0.0);
+		if(remainingIncome - BRACKET_FOUR_CAP > 0) {
+			tier5Income = remainingIncome - BRACKET_FOUR_CAP;
+		}
 		double tier5Taxes = tier5Income * BRACKET_FIVE_RATE;
 		
 		remainingIncome -= tier5Income;
 		
-		double tier4Income = Math.max(remainingIncome - BRACKET_THREE_CAP, 0.0);
+		double tier4Income = 0;//Math.max(remainingIncome - BRACKET_THREE_CAP, 0.0);
+		if(remainingIncome - BRACKET_THREE_CAP > 0) {
+			tier4Income = remainingIncome - BRACKET_THREE_CAP;
+		}
 		double tier4Taxes = tier4Income * BRACKET_FOUR_RATE;
 		
 		remainingIncome -= tier4Income;
 		
-		double tier3Income = Math.max(remainingIncome - BRACKET_TWO_CAP, 0.0);
+		double tier3Income = 0;//Math.max(remainingIncome - BRACKET_TWO_CAP, 0.0);
+		if(remainingIncome - BRACKET_TWO_CAP > 0) {
+			tier3Income = remainingIncome - BRACKET_TWO_CAP;
+		}
 		double tier3Taxes = tier3Income * BRACKET_THREE_RATE;
 		
 		remainingIncome -= tier3Income;
 		
-		double tier2Income = Math.max(remainingIncome - BRACKET_ONE_CAP, 0.0);
+		double tier2Income = 0;//Math.max(remainingIncome - BRACKET_ONE_CAP, 0.0);
+		if(remainingIncome - BRACKET_ONE_CAP > 0) {
+			tier2Income = remainingIncome - BRACKET_ONE_CAP;
+		}
 		double tier2Taxes = tier2Income * BRACKET_TWO_RATE;
 		
 		remainingIncome -= tier2Income;
